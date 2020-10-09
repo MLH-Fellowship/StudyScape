@@ -1,7 +1,6 @@
    function printCalendar () {
     var calendarId = 'rvividha@gmail.com';
     var apiKey = config.api_key;
-  
     // You can get a list of time zones from here: http://www.timezoneconverter.com/cgi-bin/zonehelp
     var userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     if (!userTimeZone) {
