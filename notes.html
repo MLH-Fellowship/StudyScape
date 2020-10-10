@@ -1,14 +1,4 @@
 <html>
-    <!--
-        TODO: 
-            - add event handlers/error codes for upload
-            - add event handlers/error codes for download
-            - add in ways for users to create own folders
-            - add in extra organization methods for users to easily find files
-            - add delete features
-            - reorganize code
-            - integrate into node app structure
-    -->
     <head>
         <meta charset="utf-8">
         <title>Student Planner</title>
@@ -36,7 +26,7 @@
         <div style="display:flex; flex-direction:row; justify-content:center; align-items:center">
             <label for="folder">Folder:  </label>
             <input type="text" id="folder"/>
-            <button onclick="addToFolder()">Submit</button>
+            <!--<button onclick="getFolderName()">Submit</button>-->
         </div>
         <br>
         <br>
@@ -69,11 +59,9 @@
             firebase.analytics();
 
             /** Create new bucket folders */
-            function createNewFolder() {
-                var folderName = document.getElementById("folder").value;
-                var folderRef = firebase.storage().ref(folderName + "/");
-                var orgTask = folderRef.put()
-
+            function getFolderName() {
+                var folderName = document.getElementById("folder").value + "/";
+                return folderName;
             }
 
             /** Upload documents */
@@ -88,7 +76,8 @@
                 var file = e.target.files[0];
 
                 // Create a storage ref
-                var storageRef = firebase.storage().ref('class_notes/' + file.name);
+                //console.log(folderName);
+                var storageRef = firebase.storage().ref(getFolderName() + file.name);
 
                 // Upload file
                 var task = storageRef.put(file);
@@ -122,11 +111,15 @@
         </div>
  
          <script>
+             function getFolderName() {
+                var folderName = document.getElementById("folder").value + "/";
+                return folderName;
+            }
             function download() {
 
             // Get elements
                 var fileName = document.getElementById("fileName").value;
-                var path = "class_notes/" + fileName;
+                var path = getFolderName() + fileName;
                 var fileRef = firebase.storage().ref(path);
 
                 // Download data
