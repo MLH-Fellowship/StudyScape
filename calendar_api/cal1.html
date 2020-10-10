@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Student Planner</title> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">  
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">        
+    </head>
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        h1 {
+        color: white;
+        text-align: center;
+        background-color: rgb(46, 119, 230);
+        }
+        
+        .calendar {
+          float: left;
+          width: 50%;
+          padding: 5px;
+        }
+        
+        /* Clearfix (clear floats) */
+        .row::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+    </style>
+    <body>
+        <h1 align='center'>Online Classes Schedule</h1>
+        <div class = "row">
+            <div class = "calendar" id="js-gcal-event">
+            <svg aria-hidden="true" width="35" height="35" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" stroke="#2c2a29"><g fill="none" fill-rule="evenodd" stroke-width="2"><circle cx="22" cy="22" r="1"><animate attributeName="r" begin="0s" dur="1.8s" values="1; 20" calcMode="spline" keyTimes="0; 1" keySplines="0.165, 0.84, 0.44, 1" repeatCount="indefinite"/><animate attributeName="stroke-opacity" begin="0s" dur="1.8s" values="1; 0" calcMode="spline" keyTimes="0; 1" keySplines="0.3, 0.61, 0.355, 1" repeatCount="indefinite"/></circle><circle cx="22" cy="22" r="1"><animate attributeName="r" begin="-0.9s" dur="1.8s" values="1; 20" calcMode="spline" keyTimes="0; 1" keySplines="0.165, 0.84, 0.44, 1" repeatCount="indefinite"/><animate attributeName="stroke-opacity" begin="-0.9s" dur="1.8s" values="1; 0" calcMode="spline" keyTimes="0; 1" keySplines="0.3, 0.61, 0.355, 1" repeatCount="indefinite"/></circle></g></svg>
+            <p>Loading...</p>
+            </div>
+            <div class = "calendar">
+                <iframe src="https://calendar.google.com/calendar/embed?src=majorleaguehacking.com_pr3njjh4ok0pi93jfqm51jg2g0%40group.calendar.google.com&ctz=Asia%2FKolkata" style="border: 0" width="750" height="600" frameborder="0" scrolling="no"></iframe>
+            </div>
+        </div>
+        <!-- For google calendar integration -->
+        <script src="https://cdn.polyfill.io/v3/polyfill.min.js?version=3.52.1&features=Array.prototype.forEach,console,Date.prototype.toISOString,document,Intl,Map,Promise,Set"></script>
+        <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+        <script src="https://unpkg.com/dayjs@1.8.23/plugin/localizedFormat.js"></script>
+        <script>dayjs.extend(window.dayjs_plugin_localizedFormat)</script>
+        <script src="https://apis.google.com/js/api.js"></script>  
+        <script type='text/javascript' src='config.js'></script> 
+        <script src="cal1.js"></script>
+    </body>
+</html>

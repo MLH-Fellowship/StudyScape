@@ -48,6 +48,6 @@
     });
   }
   
-  
+
   // Loads the JavaScript client library and invokes `start` afterwards.
   gapi.load('client', printCalendar);

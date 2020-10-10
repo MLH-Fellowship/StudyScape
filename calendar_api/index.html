@@ -2,45 +2,35 @@
 <html lang='en'>
     <head>
         <meta charset='UTF-8'>
-        <title>Student Planner</title>
-            
+        <title>Student Planner</title>   
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">   
     </head>
     <style>
-        * {
-          box-sizing: border-box;
+         h1 {
+        color: white;
+        text-align: center;
+        background-color: rgb(46, 119, 230);
         }
         
-        .calendar {
-          float: left;
-          width: 50%;
-          padding: 5px;
-        }
-        
-        /* Clearfix (clear floats) */
-        .row::after {
-          content: "";
-          clear: both;
-          display: table;
-        }
     </style>
     <body>
         <h1 align='center'>Online Classes Schedule</h1>
-        <div class = "row">
-            <div class = "calendar" id="js-gcal-event">
-            <svg aria-hidden="true" width="35" height="35" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" stroke="#2c2a29"><g fill="none" fill-rule="evenodd" stroke-width="2"><circle cx="22" cy="22" r="1"><animate attributeName="r" begin="0s" dur="1.8s" values="1; 20" calcMode="spline" keyTimes="0; 1" keySplines="0.165, 0.84, 0.44, 1" repeatCount="indefinite"/><animate attributeName="stroke-opacity" begin="0s" dur="1.8s" values="1; 0" calcMode="spline" keyTimes="0; 1" keySplines="0.3, 0.61, 0.355, 1" repeatCount="indefinite"/></circle><circle cx="22" cy="22" r="1"><animate attributeName="r" begin="-0.9s" dur="1.8s" values="1; 20" calcMode="spline" keyTimes="0; 1" keySplines="0.165, 0.84, 0.44, 1" repeatCount="indefinite"/><animate attributeName="stroke-opacity" begin="-0.9s" dur="1.8s" values="1; 0" calcMode="spline" keyTimes="0; 1" keySplines="0.3, 0.61, 0.355, 1" repeatCount="indefinite"/></circle></g></svg>
-            <p>Loading...</p>
-            </div>
-            <div class = "calendar">
-                <iframe src="https://calendar.google.com/calendar/embed?src=majorleaguehacking.com_pr3njjh4ok0pi93jfqm51jg2g0%40group.calendar.google.com&ctz=Asia%2FKolkata" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-            </div>
+        <div class="w3-sidebar w3-bar-block" style="width:15%">
+            <a href="cal2.html" class="w3-bar-item w3-button">Coursera</a>
+            <a href="cal3.html" class="w3-bar-item w3-button">MLH Fellowship</a>
+            <a href="cal1.html" class="w3-bar-item w3-button">MLH Additional Events</a>
+        </div>
+        <div style="margin-left:18%">
+            <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FKolkata&amp;src=cnZpdmlkaGFAZ21haWwuY29t&amp;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=YzlicThtOW9uc2lrcWxqdm1tc3M5YWRxM3BobDAxNnRAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=Y2xhc3Nyb29tMTA5OTY1MzY2MDcyNDA2MzU4MjM0QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=ZW4uaW5kaWFuI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=bWFqb3JsZWFndWVoYWNraW5nLmNvbV9wcjNuampoNG9rMHBpOTNqZnFtNTFqZzJnMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%237986CB&amp;color=%2333B679&amp;color=%23A79B8E&amp;color=%230047a8&amp;color=%230B8043&amp;color=%23E67C73" style="width:100%" style="border:solid 1px #777" width="800" height="700" frameborder="0" scrolling="no"></iframe>
         </div>
         <!-- For google calendar integration -->
-        <script src="https://cdn.polyfill.io/v3/polyfill.min.js?version=3.52.1&features=Array.prototype.forEach,console,Date.prototype.toISOString,document,Intl,Map,Promise,Set"></script>
+        <!-- <script src="https://cdn.polyfill.io/v3/polyfill.min.js?version=3.52.1&features=Array.prototype.forEach,console,Date.prototype.toISOString,document,Intl,Map,Promise,Set"></script>
         <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
         <script src="https://unpkg.com/dayjs@1.8.23/plugin/localizedFormat.js"></script>
         <script>dayjs.extend(window.dayjs_plugin_localizedFormat)</script>
         <script src="https://apis.google.com/js/api.js"></script>  
         <script type='text/javascript' src='config.js'></script> 
-        <script src="index.js"></script>
+        <script src="index.js"></script> -->
     </body>
 </html>
