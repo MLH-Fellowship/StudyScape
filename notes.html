@@ -5,6 +5,8 @@
             - add event handlers/error codes for download
             - add in ways for users to create own folders
             - add in extra organization methods for users to easily find files
+            - add delete features
+            - reorganize code
             - integrate into node app structure
     -->
     <head>
@@ -31,7 +33,13 @@
         </style>
     </head>
     <body>
-
+        <div style="display:flex; flex-direction:row; justify-content:center; align-items:center">
+            <label for="folder">Folder:  </label>
+            <input type="text" id="folder"/>
+            <button onclick="addToFolder()">Submit</button>
+        </div>
+        <br>
+        <br>
         <progress value="0" max="100" id="uploader">0%</progress>
         <input type="file" value="upload" id="fileButton" />
 
@@ -59,6 +67,16 @@
             // Initialize Firebase
             firebase.initializeApp(config);
             firebase.analytics();
+
+            /** Create new bucket folders */
+            function createNewFolder() {
+                var folderName = document.getElementById("folder").value;
+                var folderRef = firebase.storage().ref(folderName + "/");
+                var orgTask = folderRef.put()
+
+            }
+
+            /** Upload documents */
 
             // Get elements
             var uploader = document.getElementById('uploader');
@@ -109,10 +127,10 @@
             // Get elements
                 var fileName = document.getElementById("fileName").value;
                 var path = "class_notes/" + fileName;
-                var storageRef = firebase.storage().ref(path);
+                var fileRef = firebase.storage().ref(path);
 
                 // Download data
-                storageRef.getDownloadURL().then(function(url) {
+                fileRef.getDownloadURL().then(function(url) {
                     window.open(url, "_blank");
                 });
             }
