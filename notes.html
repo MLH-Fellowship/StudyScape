@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Student Planner</title>
+        <style media="screen">
+            body {
+                display: flex;
+                min-height: 100vh;
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            #uploader {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 50%;
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <progress value="0" max="100" id="uploader">0%</progress>
+        <input type="file" value="upload" id="fileButton" />
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use  
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-storage.js"></script>
+
+        <script>
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            var config = {
+                apiKey: "AIzaSyD2kPuOnf4st2efOTNn2R1e92wy2rq2jWg",
+                authDomain: "student-planner-d43e2.firebaseapp.com",
+                databaseURL: "https://student-planner-d43e2.firebaseio.com",
+                projectId: "student-planner-d43e2",
+                storageBucket: "student-planner-d43e2.appspot.com", 
+                messagingSenderId: "327005986193",
+                appId: "1:327005986193:web:490cb8f00284781fd3ce30",
+                measurementId: "G-KLRT1S5PJG"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(config);
+            firebase.analytics();
+
+            // Get elements
+            var uploader = document.getElementById('uploader');
+            var fileButton = document.getElementById('fileButton');
+
+            // Listen for file selection
+            fileButton.addEventListener('change', function(e) {
+                // Get file
+                var file = e.target.files[0];
+
+                // Create a storage ref
+                var storageRef = firebase.storage().ref('class_notes/' + file.name);
+
+                // Upload file
+                var task = storageRef.put(file);
+
+                // Update progress bar
+                task.on('state_changed', 
+
+                    function progress(snapshot) {
+                        var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                        uploader.value = percentage;
+                    }, 
+
+                    function error(err) {
+
+                    },
+
+                    function complete() {
+
+                    }
+                )
+            })
+        </script>
+    </body>
+</html>
