@@ -23,16 +23,6 @@
         </style>
     </head>
     <body>
-        <div style="display:flex; flex-direction:row; justify-content:center; align-items:center">
-            <label for="folder">Folder:  </label>
-            <input type="text" id="folder"/>
-            <!--<button onclick="getFolderName()">Submit</button>-->
-        </div>
-        <br>
-        <br>
-        <progress value="0" max="100" id="uploader">0%</progress>
-        <input type="file" value="upload" id="fileButton" />
-
         <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>
 
@@ -57,7 +47,32 @@
             // Initialize Firebase
             firebase.initializeApp(config);
             firebase.analytics();
+        </script>
 
+        <!-- Textbox for folder name -->
+        <div style="display:flex; flex-direction:row; justify-content:center; align-items:center">
+            <label for="folder">Folder:  </label>
+            <input type="text" id="folder"/>
+        </div>
+
+        <br>
+        <br>
+
+        <!-- Progress bar and button for file upload -->
+        <progress value="0" max="100" id="uploader">0%</progress>
+        <input type="file" value="upload" id="fileButton" />
+
+        <br>
+        <br>
+
+        <!-- Textbox for file name to download -->
+        <div style="display:flex; flex-direction:row; justify-content:center; align-items:center">
+            <label for="fileName">Download file:  </label>
+            <input type="text" id="fileName"/>
+            <button onclick="download() ">Submit</button>
+        </div>
+
+        <script>
             /** Create new bucket folders */
             function getFolderName() {
                 var folderName = document.getElementById("folder").value + "/";
@@ -98,26 +113,12 @@
 
                     }
                 )
-            })
-        </script>
-         
-         <!-- Download files -->
-         <br>
-         <br>
-         <div style="display:flex; flex-direction:row; justify-content:center; align-items:center">
-            <label for="fileName">Download file:  </label>
-            <input type="text" id="fileName"/>
-            <button onclick="download() ">Submit</button>
-        </div>
- 
-         <script>
-             function getFolderName() {
-                var folderName = document.getElementById("folder").value + "/";
-                return folderName;
-            }
+            });
+
+            /** Download files */
             function download() {
 
-            // Get elements
+                // Get elements
                 var fileName = document.getElementById("fileName").value;
                 var path = getFolderName() + fileName;
                 var fileRef = firebase.storage().ref(path);
@@ -127,8 +128,6 @@
                     window.open(url, "_blank");
                 });
             }
-            
-
-         </script>
+        </script>
     </body>
 </html>
