@@ -72,6 +72,16 @@
             <button onclick="download() ">Submit</button>
         </div>
 
+        <br>
+        <br>
+
+        <!-- Textbox for file name to delete -->
+        <div style="display:flex; flex-direction:row; justify-content:center; align-items:center">
+            <label for="fileName">Delete file:  </label>
+            <input type="text" id="delete"/>
+            <button onclick="deleteFile() ">Submit</button>
+        </div>
+
         <script>
             /** Create new bucket folders */
             function getFolderName() {
@@ -142,6 +152,7 @@
                 // Download data
                 fileRef.getDownloadURL().then(function(url) {
                     window.open(url, "_blank");
+                    window.location.reload();
                 }).catch(function(error) {
                     switch (error.code) {
                         case "storage/object-not-found":
@@ -156,6 +167,33 @@
                     };
                     window.location.reload();
                 });
+            }
+
+            /** Delete files */
+            function deleteFile() {
+                //Get elements
+                var delFileName = document.getElementById("delete").value;
+                var path = getFolderName() + delFileName;
+                var deleteRef = firebase.storage().ref(path);
+
+                // Delete file
+                deleteRef.delete().then(function() {
+                    alert("File deleted successfully!");
+                    window.location.reload();
+                }).catch(function(error) {
+                    switch (error.code) {
+                        case "storage/object-not-found":
+                            alert("File doesn't exist!");
+                            break;
+                        case "storage/unauthenticated":
+                            alert("Please sign in!");
+                            break;
+                        case "storage/unknown":
+                            alert("An unknown error has occurred. Please try again");
+                            break;
+                    };
+                    window.location.reload();
+                })
             }
         </script>
     </body>
