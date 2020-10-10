@@ -91,10 +91,6 @@
                 var file = e.target.files[0];
 
                 // Create a storage ref
-<<<<<<< Updated upstream
-                //console.log(folderName);
-=======
->>>>>>> Stashed changes
                 var storageRef = firebase.storage().ref(getFolderName() + file.name);
 
                 // Upload file
@@ -109,13 +105,6 @@
                     }, 
 
                     function error(err) {
-<<<<<<< Updated upstream
-
-                    },
-
-                    function complete() {
-
-=======
                         switch (error.code) {
                             case "storage/unauthorized" :
                                 break;
@@ -138,7 +127,6 @@
                     function() {
                         window.alert("Upload successful!");
                         window.location.reload();
->>>>>>> Stashed changes
                     }
                 )
             });
@@ -154,8 +142,6 @@
                 // Download data
                 fileRef.getDownloadURL().then(function(url) {
                     window.open(url, "_blank");
-<<<<<<< Updated upstream
-=======
                 }).catch(function(error) {
                     switch (error.code) {
                         case "storage/object-not-found":
@@ -169,7 +155,6 @@
                             break;
                     };
                     window.location.reload();
->>>>>>> Stashed changes
                 });
             }
         </script>
