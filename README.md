@@ -8,5 +8,5 @@ TODO:
  - [X] Add in ways for users to create own folders in storage
  - [ ] Add in extra organization methods for users to easily find files(dropdowns, create new, etc)
  - [ ] Add delete features
- - [ ] Reorganize code
+ - [X] Reorganize code
  - [ ] Integrate into Express app structure
