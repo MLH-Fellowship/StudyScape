@@ -7,6 +7,6 @@ TODO:
  - [X] Add event handlers and error codes for download
  - [X] Add in ways for users to create own folders in storage
  - [ ] Add in extra organization methods for users to easily find files(dropdowns, create new, etc)
- - [ ] Add delete features
+ - [X] Add delete features
  - [X] Reorganize code
  - [ ] Integrate into Express app structure
