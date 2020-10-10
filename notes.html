@@ -1,4 +1,12 @@
 <html>
+    <!--
+        TODO: 
+            - add event handlers/error codes for upload
+            - add event handlers/error codes for download
+            - add in ways for users to create own folders
+            - add in extra organization methods for users to easily find files
+            - integrate into node app structure
+    -->
     <head>
         <meta charset="utf-8">
         <title>Student Planner</title>
@@ -85,5 +93,31 @@
                 )
             })
         </script>
+         
+         <!-- Download files -->
+         <br>
+         <br>
+         <div style="display:flex; flex-direction:row; justify-content:center; align-items:center">
+            <label for="fileName">Download file:  </label>
+            <input type="text" id="fileName"/>
+            <button onclick="download() ">Submit</button>
+        </div>
+ 
+         <script>
+            function download() {
+
+            // Get elements
+                var fileName = document.getElementById("fileName").value;
+                var path = "class_notes/" + fileName;
+                var storageRef = firebase.storage().ref(path);
+
+                // Download data
+                storageRef.getDownloadURL().then(function(url) {
+                    window.open(url, "_blank");
+                });
+            }
+            
+
+         </script>
     </body>
 </html>
