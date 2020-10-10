@@ -1,10 +1,10 @@
    function printCalendar () {
-    var calendarId = 'rvividha@gmail.com';
+    var calendarId = 'majorleaguehacking.com_pr3njjh4ok0pi93jfqm51jg2g0@group.calendar.google.com';
     var apiKey = config.api_key;
     // You can get a list of time zones from here: http://www.timezoneconverter.com/cgi-bin/zonehelp
     var userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     if (!userTimeZone) {
-      userTimeZone = 'Kolkata';
+      userTimeZone = 'India';
     }
     // Initializes the client with the API key and the Translate API.
     gapi.client.init({
@@ -47,6 +47,7 @@
       console.log('Error: ' + reason.result.error.message);
     });
   }
+  
   
   // Loads the JavaScript client library and invokes `start` afterwards.
   gapi.load('client', printCalendar);
