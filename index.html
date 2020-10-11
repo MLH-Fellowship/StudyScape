@@ -18,9 +18,20 @@
             <div class="row">
                 <div class="col">
                     <div class="row">
-                        <div class="col">
+                        <div class="col" id="dashboard_left">
                             <div class="card">
-                                <div class="card-body">    <p>Google Calendar</p>
+                                <div class="card-body">
+                                    <h4 class="card-title">Title</h4>
+                                    <h6 class="text-muted card-subtitle mb-2">Subtitle</h6>
+                                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><a class="card-link" href="#">Link</a><a class="card-link"
+                                        href="#">Link</a></div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col" id="dashboard_right_up">
+                                    <div class="card">
+                                        <div class="card-body">    <p>Google Calendar</p>
 
     <pre id="content"></pre>
 <button class="btn btn-primary" id="authorize_button" type="button" style="width: 5rem;">Sign In</button>
@@ -28,8 +39,8 @@
 
 <script type="text/javascript">
       // Client ID and API key from the Developer Console
-      var CLIENT_ID = '';
-      var API_KEY = '';
+      var CLIENT_ID = '298355234726-b0p7rd8qv7a775cqjn67t87nr9vt1k24.apps.googleusercontent.com';
+      var API_KEY = 'AIzaSyCS8hSlbnflnSGa1qehCaGMZgzWEwsTsW4';
 
       // Array of API discovery doc URLs for APIs used by the quickstart
       var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
@@ -160,20 +171,39 @@
       onload="this.onload=function(){};handleClientLoad()"
       onreadystatechange="if (this.readyState === 'complete') this.onload()">
     </script></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col">
-                            <div class="row"></div>
-                            <div class="row"></div>
+                            <div class="row" id="dashboard_right_down">
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Title</h4>
+                                            <h6 class="text-muted card-subtitle mb-2">Subtitle</h6>
+                                            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><a class="card-link" href="#">Link</a>
+                                            <a
+                                                class="card-link" href="#">Link</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col"></div>
+                <div class="col" id="sidebar">
+                    <div class="card">
+                        <div class="card-body"></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 
