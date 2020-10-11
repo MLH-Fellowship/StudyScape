@@ -280,3 +280,12 @@ div {
   margin-bottom: 10px;
 }
 
+#dashboard_left {
+  background-color: blue;
+  max-height: 100%;
+  min-height: 50rem;
+}
+
+.card-body {
+}
+
