@@ -19,38 +19,10 @@
                 <div class="col">
                     <div class="row">
                         <div class="col" id="dashboard_left">
-                            <div class="card" style="margin-top: 10px;">
-                                <div class="card-body"><div class="main">
-      <h1 class="to-do-title">TO-DO LIST</h1>
-      <form class="" action="todolist.html" method="post">
-        <input type="text" placeholder="Enter task to do" name="task">
-        <button  type="submit" class="btn btn-primary add-button"><strong>ADD</strong></button>
-      </form>
-      <div class="tasksBoard">
-        <ul>
-        </ul>
-        <a id="clear" class="btn btn-primary delete-button">CLEAR</a>
-      </div>
-    </div></div>
-                            </div>
                         </div>
                         <div class="col">
                             <div class="row">
                                 <div class="col flex-grow-1 flex-shrink-0" id="dashboard_right_up">
-                                    <div class="card">
-                                        <div class="card-body">    <p>Google Calendar</p>
-
-    <pre id="content"></pre>
-<button class="btn btn-primary" id="authorize_button" type="button" style="width: 5rem;">Sign In</button>
-<button class="btn btn-primary" id="signout_button" type="button" style="width: 6rem;">Sign Out</button>
-
-
-
-    <script async defer src="https://apis.google.com/js/api.js"
-      onload="this.onload=function(){};handleClientLoad()"
-      onreadystatechange="if (this.readyState === 'complete') this.onload()">
-    </script></div>
-                                    </div>
                                 </div>
                             </div>
                             <div class="row">
@@ -60,13 +32,42 @@
                     </div>
                 </div>
                 <div class="col-2 flex-grow-0 flex-shrink-0 align-content-center" id="sidebar">
-                    <div class="card">
-                        <div class="card-body"></div>
+                  <div class="card" style="margin-top: 10px;">
+                    <div class="widget-symbol">
+                    <img src="assets/icons/clipboard.svg">
+                    <p>To-Do List<p>
+                  </div>
+                  <div class="card-body"><div class="main">
+                      <h1 class="to-do-title">TO-DO LIST</h1>
+                      <form class="" action="todolist.html" method="post">
+                      <input type="text" placeholder="Enter task to do" name="task">
+                      <button  type="submit" class="btn btn-primary add-button"><strong>ADD</strong></button>
+                      </form>
+                      <div class="tasksBoard">
+                      <ul>
+                      </ul>
+                      <a id="clear" class="btn btn-primary delete-button">CLEAR</a>
+                      </div>
+                      </div></div>
+                  </div>
+
+                  <div class="card">
+                    <div class="widget-symbol">
+                    <img src="assets/icons/calendar.svg">
+                    <p>Google Calendar<p>
                     </div>
-                    <div class="card">
-                        <div class="card-body"></div>
-                    </div>
-                </div>
+                      <div class="card-body">
+                        <p>Google Calendar</p>
+                        <pre id="content"></pre>
+                        <button class="btn btn-primary" id="authorize_button" type="button" style="width: 5rem;">Sign In</button>
+                        <button class="btn btn-primary" id="signout_button" type="button" style="width: 6rem;">Sign Out</button>
+                        <script async defer src="https://apis.google.com/js/api.js"
+                        onload="this.onload=function(){};handleClientLoad()"
+                        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+                        </script></div>
+                  </div>
+              </div>
+
             </div>
         </div>
     </div>

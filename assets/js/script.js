@@ -1,6 +1,12 @@
 //DragulaJS for front-end dragging
 dragula([ document.getElementById("dashboard_left"), document.getElementById("dashboard_right_up"), document.getElementById("dashboard_right_down"), document.getElementById("sidebar")], {
-  returnOnSpill: true
+  removeOnSpill: true,
+  copy: function (el, source) {
+    return source === document.getElementById("sidebar")
+  },
+  accepts: function (el, target) {
+    return target !== document.getElementById("sidebar")
+  }
 });
 
 //code for to-do list

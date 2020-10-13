@@ -267,6 +267,7 @@ pre {
   max-height: 10rem;
   margin-top: 10px;
   margin-bottom: 10px;
+  align-items: center;
 }
 
 #dashboard_left {
@@ -355,6 +356,7 @@ a {
   cursor: pointer;
 }
 
+
 .delete:hover{
   background-color: #d14747;
 
@@ -377,4 +379,26 @@ a {
   button {
     width: 10%;
   }
+}
+
+.widget-symbol{
+  margin-top: 2rem;
+  text-align: center;
+  display: none;
+
+}
+
+.widget-symbol img{
+    width: 4rem;
+}
+.widget-symbol p{
+    margin-top: 1rem;
+}
+
+#sidebar .card .card-body{
+  visibility: hidden;
+}
+
+#sidebar .card .widget-symbol{
+  display: block !important;
 }
