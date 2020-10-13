@@ -1,5 +1,6 @@
 #sidebar {
   max-width: 20%;
+  background-color: #e3ffde;
 }
 
 :root {
@@ -41,7 +42,6 @@ a, a:link, a:active, a:visited {
 
 a:hover {
   color: #000013;
-  border-bottom: #0066aa 0.16rem solid;
 }
 
 header, footer {
@@ -131,36 +131,31 @@ li {
   padding: 0.1rem;
 }
 
-.button {
-  font-family: "Arimo", sans-serif;
-  font-weight: 700;
-  border: #000013 0.14rem solid;
-  border-radius: 0.2rem;
-  color: #000013;
-  padding: 0.6rem 1rem;
-  margin-bottom: 0.3rem;
-  cursor: pointer;
-}
+
 
 .delete-button {
-  background-color: #ff4444;
-  margin: 0.1rem auto 0.6rem auto;
+  background-color: #f05454;
+  border-color: #f05454;
 }
 
 .delete-button:hover {
-  background-color: #fa7070;
+  background-color: #d14747;
+  border-color: #d14747;
 }
 
 .add-button {
-  background-color: #ffcb1e;
-  padding: 0 1rem;
-  height: 2.8rem;
-  width: 10rem;
-  margin-top: 0.6rem;
+  background-color: #61d44c;
+  border-color: #61d44c;
 }
 
 .add-button:hover {
-  background-color: #ffdd6e;
+  background-color: #56bf43;
+  border-color: #56bf43;
+}
+
+label{
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .task {
@@ -227,10 +222,6 @@ li {
   filter: alpha(opacity=20);
 }
 
-.card-body {
-  padding: 7rem;
-}
-
 .container, .container-lg, .container-md, .container-sm, .container-xl {
   padding-top: 3rem;
 }
@@ -247,9 +238,6 @@ p {
 pre {
   font-family: 'Encode Sans';
   font-weight: 300;
-}
-
-div {
 }
 
 .gu-mirror {
@@ -277,15 +265,121 @@ div {
 #sidebar .card {
   max-width: 10rem;
   max-height: 10rem;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 
 #dashboard_left {
-  background-color: blue;
+  background-color: #cff9ff;
   max-height: 100%;
   min-height: 50rem;
 }
 
-.card-body {
+#dashboard_right_up {
+  background-color: #cfd4ff;
 }
 
+.card {
+  margin: 10px;
+}
+
+#dashboard_right_down {
+  background-color: #f1cfff;
+}
+
+#sidebar .card-body {
+  max-height: 10%;
+}
+
+.col.flex-grow-1.flex-shrink-0 {
+  max-height: 100%;
+  min-height: 25rem;
+}
+
+#dashboard_right_up {
+  max-height: 100%;
+  min-height: 25rem;
+}
+
+.to-do-title {
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+
+
+input[type="text"] {
+  width: 310px;
+  height: 30px;
+  outline: 0;
+  border: none;
+  font-size: 1.5em;
+  background: #fff;
+  color: #2f4f4f;
+}
+
+
+
+.tasksBoard {
+  background-color: #fff;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 40px;
+  display: none;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  border-bottom: 1px solid #53BDFF;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  font-size: 1.3em;
+  color: #2f4f4f;
+}
+
+a {
+  float: right;
+  text-align: right;
+  color: #000000;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.delete {
+  background-color: #f05454;
+  color: #fff;
+  cursor: pointer;
+}
+
+.delete:hover{
+  background-color: #d14747;
+
+}
+
+@media (max-width: 500px) {
+  .main {
+    margin: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  input[type="text"] {
+    width: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+  button {
+    width: 10%;
+  }
+}
+
+
+#dashboard_right_down .card {
+  max-width: 15rem;
+}
