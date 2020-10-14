@@ -19,7 +19,8 @@
   "homepage": "https://github.com/MLH-Fellowship/Student-Planner#readme",
   "dependencies": {
     "ejs": "^3.1.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "firebase": "^7.23.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
