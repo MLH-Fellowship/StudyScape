@@ -76,8 +76,6 @@ var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/
 // included, separated by spaces.
 var SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
 
-var authorizeButton = document.getElementById('authorize_button');
-var signoutButton = document.getElementById('signout_button');
 
 /**
  *  On load, called to load the auth2 library and API client library.
@@ -102,8 +100,6 @@ function initClient() {
 
     // Handle the initial sign-in state.
     updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-    authorizeButton.onclick = handleAuthClick;
-    signoutButton.onclick = handleSignoutClick;
     homeButton.onclick = handleRedirectHome;
   }, function(error) {
     appendPre(JSON.stringify(error, null, 2));
@@ -116,29 +112,14 @@ function initClient() {
  */
 function updateSigninStatus(isSignedIn) {
   if (isSignedIn) {
-    authorizeButton.style.display = 'none';
-    signoutButton.style.display = 'block';
     listUpcomingEvents();
   } else {
-    authorizeButton.style.display = 'block';
-    signoutButton.style.display = 'none';
+    deleteContent();
   }
 }
 
-/**
- *  Sign in the user upon button click.
- */
-function handleAuthClick(event) {
-  gapi.auth2.getAuthInstance().signIn();
-}
 
-/**
- *  Sign out the user upon button click.
- */
-function handleSignoutClick(event) {
-  deleteContent();
-  gapi.auth2.getAuthInstance().signOut();
-}
+
 
 /**
  *  Sign out the user and return to homepage upon button click.
