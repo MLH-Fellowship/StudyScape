@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 	<link rel="shortcut icon" href="/assets/img/favicon.png">
-	<meta name="google-signin-client_id" content="865976209413-97i0rd6vh3l5o7tu7dlns7goi9j3tci1.apps.googleusercontent.com">
+	<meta name="google-signin-client_id" content="439946398949-hae6t8j4lgireeuqqavonm0qs6iki0lm.apps.googleusercontent.com">
 
     <title>Student Planner</title>
 
@@ -60,10 +60,13 @@
 					  </div>
 					  <button type="submit" class="btn btn-warning btn-lg">Sign In</button> -->
 					  <br>
-					  <div id="my-signin2" align="left"></div>
+					  <div id="my-signin2" data-onsuccess="onSuccess" align="left"></div>
 					  <script>
 						function onSuccess(googleUser) {
 						  console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+						  const profile = googleUser.getBasicProfile();
+						  const id_token = googleUser.getAuthResponse().id_token;
+						  window.location = 'googlesignintoken/?id_token='+id_token;
 						}
 						function onFailure(error) {
 						  console.log(error);
