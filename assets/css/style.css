@@ -1,7 +1,4 @@
-#sidebar {
-  max-width: 20%;
-  background-color: #e3ffde;
-}
+
 
 :root {
   font-size: calc(0.5vw + 1vh);
@@ -17,7 +14,6 @@ body {
 }
 
 h1, h4 {
-  font-family: "Arimo", sans-serif;
   line-height: 1.3;
 }
 
@@ -224,6 +220,7 @@ label{
 
 .container, .container-lg, .container-md, .container-sm, .container-xl {
   padding-top: 3rem;
+  padding-bottom: 1rem;
 }
 
 #signout_button {
@@ -262,6 +259,45 @@ pre {
   opacity: .2;
 }
 
+body:before{
+  content: "";
+  position: absolute;
+  width : 100%;
+  height: 100%;
+  background: inherit;
+  z-index: -1;
+
+  filter: blur(15rem);
+
+
+}
+
+
+#dashboard_left {
+  background-color: rgba(0, 0, 0, 0.8);
+  max-height: 100%;
+  min-height: 50rem;
+  box-shadow: 1px 1px 5px black;
+}
+
+
+#dashboard_right_up {
+  background-color: rgba(179, 179, 179, 0.8);
+  box-shadow: 1px 1px 5px black;
+}
+
+
+#dashboard_right_down {
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 1px 1px 5px black;
+}
+
+#sidebar {
+  max-width: 20%;
+  background-color: rgba(0, 0, 0, 1);
+  box-shadow: 1px 1px 5px black;
+}
+
 #sidebar .card {
   max-width: 10rem;
   max-height: 10rem;
@@ -270,26 +306,12 @@ pre {
   align-items: center;
 }
 
-#dashboard_left {
-  background-color: #cff9ff;
-  max-height: 100%;
-  min-height: 50rem;
-}
-
-#dashboard_right_up {
-  background-color: #cfd4ff;
+#sidebar .card-body {
+  max-height: 10%;
 }
 
 .card {
   margin: 10px;
-}
-
-#dashboard_right_down {
-  background-color: #f1cfff;
-}
-
-#sidebar .card-body {
-  max-height: 10%;
 }
 
 .col.flex-grow-1.flex-shrink-0 {
@@ -309,7 +331,7 @@ pre {
 
 
 
-input[type="text"] {
+.card-body input[type="text"] {
   width: 310px;
   height: 30px;
   outline: 0;
