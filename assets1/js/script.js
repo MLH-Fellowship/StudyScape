@@ -104,6 +104,7 @@ function initClient() {
     updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
     authorizeButton.onclick = handleAuthClick;
     signoutButton.onclick = handleSignoutClick;
+    homeButton.onclick = handleRedirectHome;
   }, function(error) {
     appendPre(JSON.stringify(error, null, 2));
   });
@@ -137,6 +138,14 @@ function handleAuthClick(event) {
 function handleSignoutClick(event) {
   deleteContent();
   gapi.auth2.getAuthInstance().signOut();
+}
+
+/**
+ *  Sign out the user and return to homepage upon button click.
+ */
+function handleRedirectHome(event) {
+  gapi.auth2.getAuthInstance().signOut();
+  window.location = "../index.html"
 }
 
 /**

@@ -16,8 +16,9 @@
         <div class="container">
           <div class="title">
             <h1 style="font-family: 'Encode Sans', sans-serif;">My Board 1</h1>
-            <a id="clear" href="../index.html" class="btn btn-primary">Home</a>
+        <button id="homeButton" class="btn btn-primary">Home</button>
             <div>
+
             <div class="row flex-grow-0 flex-shrink-0">
                 <div class="col">
                     <div class="row">
@@ -64,6 +65,14 @@
                         <pre id="content"></pre>
                         <button class="btn btn-primary" id="authorize_button" type="button" style="width: 5rem;">Sign In</button>
                         <button class="btn btn-primary" id="signout_button" type="button" style="width: 6rem;">Sign Out</button>
+                        <script>
+                        /**
+                         *  On load, called to load the auth2 library and API client library.
+                         */
+                        function handleClientLoad() {
+                          gapi.load('client:auth2', initClient);
+                        }
+                        </script>
                         <script async defer src="https://apis.google.com/js/api.js"
                         onload="this.onload=function(){};handleClientLoad()"
                         onreadystatechange="if (this.readyState === 'complete') this.onload()">
