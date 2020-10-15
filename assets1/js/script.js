@@ -19,6 +19,7 @@ function loadEvents(){
 }
 
 function submit(e){
+  console.log("submit");
   e.preventDefault();
   let taskList;
   let input = document.querySelector('input');
