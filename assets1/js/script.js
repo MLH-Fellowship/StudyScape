@@ -84,6 +84,8 @@ function handleClientLoad() {
   gapi.load('client:auth2', initClient);
 }
 
+
+
 /**
  *  Initializes the API client library and sets up sign-in state
  *  listeners.
@@ -97,7 +99,7 @@ function initClient() {
   }).then(function () {
     // Listen for sign-in state changes.
     gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-
+    var homeButton = document.getElementById("homeButton");
     // Handle the initial sign-in state.
     updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
     homeButton.onclick = handleRedirectHome;
