@@ -18,7 +18,9 @@ python -m http.server
 5. Open http://localhost:8000 in your preferred browser. 
 
 ## About the Project
-Our dashboard is configured with Google sign-in, so you can use your Gmail account to sign in to our customizable dashboard. Here, you can drag and drop widgets into your dashboard to tailor it best to how you work! Our widgets include features such as Google Calendar, which can display your classes and events, as well as a to-do list feature that lets you create multiple task lists. 
+Our dashboard is configured with Google sign-in, so you can use your Gmail account to sign in to our customizable dashboard. Here, you can drag and drop widgets into your dashboard to tailor it best to how you work! Our widgets include features such as:
+ - Google Calendar, which can display your classes and events
+ - To-do list, which lets you create multiple task lists. 
 
 
 ## Contributors
