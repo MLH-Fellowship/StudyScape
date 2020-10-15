@@ -424,3 +424,8 @@ a {
 #sidebar .card .widget-symbol{
   display: block !important;
 }
+
+#homeButton{
+  position: fixed;
+  align-self: right;
+}
