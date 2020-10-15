@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Student Planner (My Board)</title>
-    <link rel="stylesheet" href="/assets1/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href={{ url_for('static', filename='assets1/bootstrap/css/bootstrap.min.css') }}>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Advent+Pro">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Encode+Sans:300,400,600,700">
-    <link rel="stylesheet" href="/assets1/css/style.css">
+    <link rel="stylesheet" href={{ url_for('static', filename='assets1/css/style.css') }}>
 </head>
 
-<body style="background-image: url('/assets1/icons/plaster-leaves-texture.jpg');">
+<body style="background-image: url(../static/assets1/icons/plaster-leaves-texture.jpg)">
     <div>
         <div class="container">
           <div class="title">
@@ -38,17 +38,18 @@
                 <div class="col-2 flex-grow-0 flex-shrink-0 align-content-center" id="sidebar">
                   <div class="card" style="margin-top: 10px;">
                     <div class="widget-symbol">
-                    <img src="/assets1/icons/clipboard.svg">
+                    <img src={{ url_for('static', filename='assets1/icons/clipboard.svg') }}>
                     <p>To-Do List<p>
                   </div>
                   <div class="card-body"><div class="main">
                       <h1 class="to-do-title">To-Do</h1>
-                      <form class="" action="todolist.html" method="post">
+                      <form class="" action='/add' method='POST'>
                       <input type="text" placeholder="Enter task to do" name="task">
                       <button  type="submit" class="btn btn-primary add-button"><strong>ADD</strong></button>
                       </form>
                       <div class="tasksBoard">
                       <ul>
+                        <span class="delete">×</span><label>{{task}}</label><input type="checkbox">
                       </ul>
                       <a id="clear" class="btn btn-primary delete-button">CLEAR</a>
                       </div>
@@ -57,7 +58,7 @@
 
                   <div class="card">
                     <div class="widget-symbol">
-                    <img src="/assets1/icons/calendar.svg">
+                    <img src={{ url_for('static', filename='assets1/icons/calendar.svg') }}>
                     <p>Google Calendar<p>
                     </div>
                       <div class="card-body">
@@ -83,10 +84,10 @@
             </div>
         </div>
     </div>
-    <script src="/assets1/js/jquery.min.js"></script>
-    <script src="/assets1/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../static/assets1/js/jquery.min.js"></script>
+    <script src="../static/assets1/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.min.js"></script>
-    <script src="/assets1/js/script.js"></script>
+    <script src="../static/assets1/js/script.js"></script>
 </body>
 
 </html>
