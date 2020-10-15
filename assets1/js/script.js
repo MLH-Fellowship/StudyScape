@@ -10,59 +10,64 @@ dragula([ document.getElementById("dashboard_left"), document.getElementById("da
 });
 
 //code for to-do list
-loadEvents();
-function loadEvents(){
-  document.querySelector('form').addEventListener('submit',submit);
-  document.getElementById('clear').addEventListener('click',clearList);
-  document.querySelector('ul').addEventListener('click',deleteOrTick);
-
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
 }
 
-function submit(e){
-  console.log("submit");
-  e.preventDefault();
-  let taskList;
-  let input = document.querySelector('input');
-  if(input.value != '')
-    addTask(input.value);
-  input.value = '';
-}
-
-
-function addTask(task){
-  let ul = document.querySelector('ul');
-  let li = document.createElement('li');
-  li.innerHTML = `<span class="delete">×</span><label>${task}</label><input type="checkbox">`;
-  ul.appendChild(li);
-  document.querySelector('.tasksBoard').style.display = 'block';
-}
-
-function clearList(e){
-  let ul = document.querySelector('ul').innerHTML = '';
-}
-
-function deleteOrTick(e){
-  if(e.target.className == 'delete')
-    deleteTask(e);
-  else {
-    tickTask(e);
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
   }
 }
 
-function deleteTask(e){
-  let remove = e.target.parentNode;
-  let parentNode = remove.parentNode;
-  parentNode.removeChild(remove);
-}
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
 
-function tickTask(e){
-  const task = e.target.nextSibling;
-  if(e.target.checked){
-    task.style.textDecoration = "line-through";
-    task.style.color = "#ff0000";
-  }else {
-    task.style.textDecoration = "none";
-    task.style.color = "#2f4f4f";
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var check = document.createElement("INPUT");
+  check.setAttribute("type", "checkbox");
+  check.setAttribute("class", "todo-check");
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+  li.appendChild(check);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
   }
 }
 

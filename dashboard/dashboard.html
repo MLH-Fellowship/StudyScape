@@ -42,18 +42,17 @@
                     <p>To-Do List<p>
                   </div>
                   <div class="card-body"><div class="main">
-                      <h1 class="to-do-title">To-Do</h1>
-                      <form class="">
-                      <input type="text" placeholder="Enter task to do" name="task">
-                      <button  type="submit" class="btn btn-primary add-button"><strong>ADD</strong></button>
-                      </form>
-                      <div class="tasksBoard">
-                      <ul>
-                      </ul>
-                      <a id="clear" class="btn btn-primary delete-button">CLEAR</a>
-                      </div>
-                      </div></div>
+                    <div id="myDIV" class="header">
+                      <h2>My To Do List</h2>
+                      <input type="text" id="myInput" placeholder="Title...">
+                      <span onclick="newElement()" class="btn btn-primary addBtn">Add</span>
+                    </div>
+
+                    <ul id="myUL">
+                    </ul>
                   </div>
+                </div>
+              </div>
 
                   <div class="card">
                     <div class="widget-symbol">
@@ -63,18 +62,7 @@
                       <div class="card-body">
                         <p>Google Calendar</p>
                         <pre id="content"></pre>
-                        <script>
-                        /**
-                         *  On load, called to load the auth2 library and API client library.
-                         */
-                        function handleClientLoad() {
-                          gapi.load('client:auth2', initClient);
-                        }
-                        </script>
-                        <script async defer src="https://apis.google.com/js/api.js"
-                        onload="this.onload=function(){};handleClientLoad()"
-                        onreadystatechange="if (this.readyState === 'complete') this.onload()">
-                        </script></div>
+                      </div>
                   </div>
               </div>
 
@@ -85,6 +73,18 @@
     <script src="/assets1/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.min.js"></script>
     <script src="/assets1/js/script.js"></script>
+    <script>
+    /**
+     *  On load, called to load the auth2 library and API client library.
+     */
+    function handleClientLoad() {
+      gapi.load('client:auth2', initClient);
+    }
+    </script>
+    <script async defer src="https://apis.google.com/js/api.js"
+    onload="this.onload=function(){};handleClientLoad()"
+    onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
 </body>
 
 </html>
