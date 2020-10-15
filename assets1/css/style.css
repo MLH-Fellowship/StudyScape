@@ -400,8 +400,16 @@ a {
 }
 
 #homeButton{
+  margin: 2rem;
   position: fixed;
   align-self: right;
+  background-color: #404040;
+  border-color: #404040;
+}
+
+#homeButton:hover{
+  background-color: #242424;
+  border-color: #242424;
 }
 
 
