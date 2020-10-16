@@ -8,6 +8,8 @@ Let StudyScape manage your school life easily, all in one place! Nowadays, there
 
 <img src="ss/3.png" width="1000">
 
+<img src="ss/4.png" width="1000">
+
 ## Setup
 1. Create or sign in to your Github account.
 2. Fork this [repository](https://github.com/MLH-Fellowship/Student-Planner)
