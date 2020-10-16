@@ -13,9 +13,9 @@ Let StudyScape manage your school life easily, all in one place! Nowadays, there
 2. Fork this [repository](https://github.com/MLH-Fellowship/Student-Planner)
 3. Clone your fork of the repository and define an upstream remote pointing back to the Connectify repository that you forked in the first place.
 ```
-git clone https://github.com/YOUR-USERNAME/Student-Planner.git
-cd Student-Planner
-git remote add upstream https://github.com/YOUR-USERNAME/Connectify.git
+git clone https://github.com/MLH-Fellowship/StudyScape.git 
+cd StudyScape
+git remote add upstream https://github.com/MLH-Fellowship/StudyScape.git
 ```
 4. Start the server by running
 ```
