@@ -30,6 +30,10 @@ Our dashboard is configured with Google sign-in, so you can use your Gmail accou
  - Google Calendar, which can display your classes and events
  - To-do list, which lets you create multiple task lists. 
 
+## Technologies Used:
+ - HTML/CSS
+ - Bootstrap
+ - Javascript
 
 ## Contributors
  - [Emily Amspoker](https://github.com/eamspoker)
