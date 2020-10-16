@@ -2,6 +2,12 @@
 
 Let StudyScape manage your school life easily, all in one place! Nowadays, there are too many individual tools to manage certain aspects of student life: multiple planner apps to manage your tasks, multiple online calendars, such as Google Calendar, to track your schedule, and so many more. We've eliminated the multitude of versions of the same concept and combined them in one nifty application: StudyScape!
 
+<img src="ss/1.png" width="500">
+
+<img src="ss/2.png" width="500">
+
+<img src="ss/3.png" width="500">
+
 ## Setup
 1. Create or sign in to your Github account.
 2. Fork this [repository](https://github.com/MLH-Fellowship/Student-Planner)
